@@ -58,16 +58,20 @@ class Linkedin:
 			soup = BeautifulSoup(res.content, 'html.parser')
 			tree = soup.find_all("code")[14]
 			oJson = json.loads(tree.text)['data']['elements']
-			for i in oJson:
-				for j in i['elements']:
-					print(j['title']['text'])
-					self.peopleList.append({
-						"name": j['title']['text'],
-					})
+			try:
+				for i in oJson:
+					for j in i['elements']:
+						print(j['title']['text'])
+						self.peopleList.append({
+							"name": j['title']['text'],
+						})
+			except:
+				pass
 
 	def save(self):
 		db.test.delete_many({})
 		db.test.insert_many(self.peopleList)
 
-test = Linkedin()
-test.company()
+if __name__ == "__main__":
+	test = Linkedin()
+	test.company()
