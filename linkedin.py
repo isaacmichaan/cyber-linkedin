@@ -7,7 +7,7 @@ from pymongo import MongoClient
 import mysql.connector as mariadb
 
 # connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
-#client = MongoClient("mongodb+srv://isaacmichaan1:11Yossef@cluster0-gvxqb.gcp.mongodb.net/test?retryWrites=true&w=majority")
+#client = MongoClient("mongodb+srv://USERNAME:PASSWORD@cluster0-gvxqb.gcp.mongodb.net/test?retryWrites=true&w=majority")
 #db=client.peopleList
 
 raw_headers = '''User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
